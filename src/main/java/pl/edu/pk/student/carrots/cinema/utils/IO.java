@@ -5,8 +5,6 @@ import pl.edu.pk.student.carrots.cinema.actions.Action;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class IO {
     public static void menu(String title, List<Action> actions) {
@@ -25,16 +23,20 @@ public class IO {
         actions.get(opt).doAction();
     }
 
-    public static <T> void accept(String title, Function<T> ifYes, Function<T> ifNo) {
-        System.out.println(title);
+    public static void accept(String title, Runnable ifYes, Runnable ifNo) {
+        System.out.println(title + " (Y/N)");
         String opt;
         while (true) {
             opt = IO.input(String.class);
             if (opt.equals("Y") || opt.equals("N")) break;
             System.out.println("Nieprawidłowa opcja, wybierz Y/N!");
         }
-        if (opt.equals("Y")) ifYes.apply(null);
-        else ifNo.apply(null);
+        if (opt.equals("Y")) ifYes.run();
+        else ifNo.run();
+    }
+
+    public static void accept(String title, Runnable ifYes) {
+        accept(title, ifYes, () -> {});
     }
 
     public static <T> T input(Class<T> type) {
@@ -50,5 +52,10 @@ public class IO {
         }
 
         return type.cast(opt);
+    }
+
+    public static void list(List<String> options) {
+        AtomicInteger index = new AtomicInteger();
+        options.forEach(option -> System.out.println(index.getAndIncrement() + " " + option));
     }
 }
