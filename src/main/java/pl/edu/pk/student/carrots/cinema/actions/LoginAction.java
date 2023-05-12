@@ -13,19 +13,27 @@ public class LoginAction implements Action {
 
     @Override
     public void doAction() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter login: ");
-        String login1 = scanner.nextLine();
-        System.out.print("Enter password: ");
-        String password1 = scanner.nextLine();
-        Login login = new Login(login1, password1);
 
-        if (login.ifLoginTrue(login1, password1) == true) {
-            System.out.println("Login successful!");
-        } else {
-            System.out.println("Invalid login details.");
+        boolean loginExists = false;
+        while (loginExists==false)
+        {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Wprowadz login: ");
+            String login1 = scanner.nextLine();
+            System.out.print("Wprowadz haslo: ");
+            String password1 = scanner.nextLine();
+            Login login = new Login(login1, password1);
+
+            if (login.ifLoginTrue(login1, password1) == true)
+            {
+                loginExists=true;
+                System.out.println("Zalogowano się pomyślnie!");
+            }
+            else
+            {
+                System.out.println("Nieprawidłowe dane logowania!");
+            }
         }
-
         IO.menu(
                 "Witaj w panelu użytkownika. Jak możemy Ci pomóc?",
                 List.of(new ListMoviesAction(), new ListSnacksAction(), new LogoutAction())
@@ -41,10 +49,14 @@ public class LoginAction implements Action {
             this.password = password;
         }
 
-        private boolean ifLoginTrue(String login, String password) {
-            if (this.login == login && this.password == password) {
+        private boolean ifLoginTrue(String login, String password)
+        {
+            if (this.login == login && this.password == password)
+            {
                 return true;
-            } else {
+            }
+            else
+            {
                 return false;
             }
         }
