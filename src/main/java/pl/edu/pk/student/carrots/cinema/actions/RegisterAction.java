@@ -2,7 +2,7 @@ package pl.edu.pk.student.carrots.cinema.actions;
 import pl.edu.pk.student.carrots.cinema.models.User;
 
 import java.util.Scanner;
-public class RegisterAction implements Action
+public class RegisterAction implements SelectableAction
 {
     @Override
     public String getTitle() {

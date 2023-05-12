@@ -22,4 +22,8 @@ public class MovieRepository {
     public List<Movie> getAll() {
         return movies;
     }
+
+    public Movie get(int i) {
+        return movies.get(i);
+    }
 }

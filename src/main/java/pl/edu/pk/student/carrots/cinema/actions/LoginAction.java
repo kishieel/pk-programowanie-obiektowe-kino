@@ -5,7 +5,7 @@ import pl.edu.pk.student.carrots.cinema.utils.IO;
 import java.util.List;
 import java.util.Scanner;
 
-public class LoginAction implements Action {
+public class LoginAction implements SelectableAction {
     @Override
     public String getTitle() {
         return "Zaloguj się";
@@ -26,10 +26,7 @@ public class LoginAction implements Action {
             System.out.println("Invalid login details.");
         }
 
-        IO.menu(
-                "Witaj w panelu użytkownika. Jak możemy Ci pomóc?",
-                List.of(new ListMoviesAction(), new ListSnacksAction(), new LogoutAction())
-        );
+        new LoggedInAction().doAction();
     }
 
     private class Login {

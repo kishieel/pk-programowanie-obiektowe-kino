@@ -1,13 +1,22 @@
 package pl.edu.pk.student.carrots.cinema.utils;
 
 import pl.edu.pk.student.carrots.cinema.actions.Action;
+import pl.edu.pk.student.carrots.cinema.actions.SelectableAction;
 
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class IO {
-    public static void menu(String title, List<Action> actions) {
+    public static void println(String text) {
+        System.out.println(text);
+    }
+
+    public static void print(String text) {
+        System.out.print(text);
+    }
+
+    public static void menu(String title, List<SelectableAction> actions) {
         System.out.println(title);
         AtomicInteger index = new AtomicInteger(1);
         actions.forEach(action -> System.out.println((index.getAndIncrement()) + ". " + action.getTitle()));
@@ -24,7 +33,7 @@ public class IO {
     }
 
     public static void accept(String title, Runnable ifYes, Runnable ifNo) {
-        System.out.println(title + " (Y/N)");
+        System.out.print(title + " (Y/N)");
         String opt;
         while (true) {
             opt = IO.input(String.class);
@@ -55,7 +64,7 @@ public class IO {
     }
 
     public static void list(List<String> options) {
-        AtomicInteger index = new AtomicInteger();
-        options.forEach(option -> System.out.println(index.getAndIncrement() + " " + option));
+        AtomicInteger index = new AtomicInteger(1);
+        options.forEach(option -> System.out.println(index.getAndIncrement() + ". " + option));
     }
 }

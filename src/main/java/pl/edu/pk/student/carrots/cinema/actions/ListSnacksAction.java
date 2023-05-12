@@ -1,6 +1,6 @@
 package pl.edu.pk.student.carrots.cinema.actions;
 
-public class ListSnacksAction implements Action {
+public class ListSnacksAction implements SelectableAction {
     @Override
     public String getTitle() {
         return "Pokaż przekąski";

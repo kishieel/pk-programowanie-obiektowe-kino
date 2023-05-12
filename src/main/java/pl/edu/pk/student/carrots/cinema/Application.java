@@ -2,6 +2,7 @@ package pl.edu.pk.student.carrots.cinema;
 
 import pl.edu.pk.student.carrots.cinema.actions.ExitAction;
 import pl.edu.pk.student.carrots.cinema.actions.LoginAction;
+import pl.edu.pk.student.carrots.cinema.actions.WelcomeAction;
 import pl.edu.pk.student.carrots.cinema.models.Movie;
 import pl.edu.pk.student.carrots.cinema.models.Snack;
 import pl.edu.pk.student.carrots.cinema.repositories.MovieRepository;
@@ -23,6 +24,6 @@ public class Application {
         snackRepository.add(new Snack("Cola Zero", 4, 76));
         snackRepository.add(new Snack("Coca Cola ", 4, 12));
 
-        IO.menu("Witaj w kinie Politechnika! Jak możemy Ci pomóc?", List.of(new LoginAction(), new ExitAction()));
+        new WelcomeAction().doAction();
     }
 }

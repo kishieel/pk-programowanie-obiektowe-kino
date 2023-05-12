@@ -1,6 +1,6 @@
 package pl.edu.pk.student.carrots.cinema.actions;
 
-public class ExitAction implements Action {
+public class ExitAction implements SelectableAction {
     @Override
     public String getTitle() {
         return "Wyjdź z kina";
