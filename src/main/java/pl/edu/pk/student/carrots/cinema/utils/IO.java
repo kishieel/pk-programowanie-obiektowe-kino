@@ -12,21 +12,27 @@ public class IO {
         AtomicInteger index = new AtomicInteger(1);
         actions.forEach(action -> System.out.println((index.getAndIncrement()) + ". " + action.getTitle()));
 
+        int opt;
         while (true) {
             System.out.print("Wybierz opcje: ");
-            int opt = IO.input(Integer.class);
-            if (opt - 1 >= 0 && opt - 1 < actions.size()) break;
+            opt = IO.input(Integer.class) - 1;
+            System.out.println(opt);
+            if (opt >= 0 && opt < actions.size()) break;
             System.out.println("Nieprawidłowy wybór!");
         }
+
+        actions.get(opt).doAction();
     }
 
     public static <T> T input(Class<T> type) {
         Scanner in = new Scanner(System.in);
         String opt = in.nextLine();
 
+        System.out.println(opt);
+
         if (type.equals(Integer.class)) {
             try {
-                return type.cast(Integer.parseInt(opt));
+                return type.cast(Integer.valueOf(opt));
             }   catch (Exception e) {
                 return type.cast(-1);
             }
