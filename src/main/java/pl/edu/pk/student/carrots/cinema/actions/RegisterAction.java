@@ -12,21 +12,21 @@ public class RegisterAction implements SelectableAction
     public void doAction()
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter login: ");
+        System.out.print("Wprowadz login: ");
         String login1 = scanner.nextLine();
-        System.out.print("Enter password: ");
+        System.out.print("Wprowadz haslo: ");
         String password1 = scanner.nextLine();
-        System.out.print("Enter name: ");
+        System.out.print("Wprowadz imie: ");
         String name1 = scanner.nextLine();
-        System.out.print("Enter surname: ");
+        System.out.print("Wprowadz nazwisko: ");
         String surname1 = scanner.nextLine();
-        System.out.print("Enter email: ");
+        System.out.print("Wprowadz email: ");
         String email1 = scanner.nextLine();
-        System.out.print("Enter phone number: ");
+        System.out.print("Wprowadz numer telefonu: ");
         int phone1 = Integer.parseInt(scanner.nextLine());
 
         User user1 = new User(login1, password1, name1, surname1, email1, phone1);
-        System.out.println("Registered successfully!");
+        System.out.println("Zarejestrowano się pomyślnie!");
 
     }
 }
