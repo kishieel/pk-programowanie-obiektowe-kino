@@ -1,5 +1,6 @@
 package pl.edu.pk.student.carrots.cinema.actions;
 
+import pl.edu.pk.student.carrots.cinema.models.Movie;
 import pl.edu.pk.student.carrots.cinema.repositories.MovieRepository;
 import pl.edu.pk.student.carrots.cinema.utils.IO;
 
@@ -20,6 +21,10 @@ public class ListMoviesAction implements Action {
                 movie.description() + " | Czas trwania: " + movie.duration() + "m"
         ));
 
-        IO.accept("Czy chcesz obejrzeć któryś z filmów?", () -> {}, () -> {});
+        IO.accept("Czy chcesz obejrzeć któryś z filmów?", this::selectMovie);
+    }
+
+    private void selectMovie() {
+        IO.list(movieRepository.getAll().stream().map(Movie::title).toList());
     }
 }
