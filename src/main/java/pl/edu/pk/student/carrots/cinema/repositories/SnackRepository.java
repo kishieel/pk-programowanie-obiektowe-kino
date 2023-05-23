@@ -18,4 +18,12 @@ public class SnackRepository {
     public void add(Snack snack) {
         snacks.add(snack);
     }
+
+    public List<Snack> getAll() {
+        return snacks;
+    }
+
+    public Snack get(int i) {
+        return snacks.get(i);
+    }
 }
