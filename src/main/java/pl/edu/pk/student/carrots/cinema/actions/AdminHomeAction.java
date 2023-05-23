@@ -11,7 +11,7 @@ public class AdminHomeAction implements Action {
     public void doAction() {
         IO.menu(
                 "Witaj w panelu admina. Jak możemy Ci pomóc?",
-                List.of(new AddNewMovieAction(), new EditMovieAction(), new LogoutAction())
+                List.of(new AddNewMovieAction(), new EditMovieAction(), new DeleteMovieAction(), new LogoutAction())
         );
     }
 }

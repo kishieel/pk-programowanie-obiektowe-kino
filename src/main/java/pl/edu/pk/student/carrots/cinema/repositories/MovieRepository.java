@@ -29,4 +29,8 @@ public class MovieRepository {
     public void update(int i, Movie movie) {
         movies.set(i, movie);
     }
+
+    public void remove(Movie movie) {
+        movies.remove(movie);
+    }
 }
