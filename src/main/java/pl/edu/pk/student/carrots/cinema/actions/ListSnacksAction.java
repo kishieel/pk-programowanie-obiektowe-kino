@@ -1,8 +1,6 @@
 package pl.edu.pk.student.carrots.cinema.actions;
 
-import pl.edu.pk.student.carrots.cinema.models.Movie;
 import pl.edu.pk.student.carrots.cinema.models.Snack;
-import pl.edu.pk.student.carrots.cinema.repositories.MovieRepository;
 import pl.edu.pk.student.carrots.cinema.repositories.SnackRepository;
 import pl.edu.pk.student.carrots.cinema.utils.IO;
 
@@ -21,7 +19,7 @@ public class ListSnacksAction implements SelectableAction {
                 snack.name() + " - " + snack.price() + "zł"
         ));
 
-        IO.accept("Czy chcesz kupić którąś z przekąsek?", this::selectSnack, () -> new LoggedInAction().doAction());
+        IO.accept("Czy chcesz kupić którąś z przekąsek?", this::selectSnack, () -> new UserHomeAction().doAction());
     }
 
     private void selectSnack() {
@@ -38,6 +36,6 @@ public class ListSnacksAction implements SelectableAction {
 
         IO.println("Przekąska - " + snack.name() + " - dodana do koszyka!");
 
-        new LoggedInAction().doAction();
+        new UserHomeAction().doAction();
     }
 }

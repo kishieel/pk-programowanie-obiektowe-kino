@@ -21,7 +21,7 @@ public class ListMoviesAction implements SelectableAction {
                 movie.description() + " | Czas trwania: " + movie.duration() + "m"
         ));
 
-        IO.accept("Czy chcesz obejrzeć któryś z filmów?", this::selectMovie, () -> new LoggedInAction().doAction());
+        IO.accept("Czy chcesz obejrzeć któryś z filmów?", this::selectMovie, () -> new UserHomeAction().doAction());
     }
 
     private void selectMovie() {
@@ -48,7 +48,7 @@ public class ListMoviesAction implements SelectableAction {
         }
 
         IO.println("Tum.. tum.. tum.. " + movie.duration() + " minuty później..");
-        new LoggedInAction().doAction();
+        new UserHomeAction().doAction();
     }
     }
 }

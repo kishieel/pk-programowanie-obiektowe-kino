@@ -1,7 +1,6 @@
 package pl.edu.pk.student.carrots.cinema.repositories;
 
 import pl.edu.pk.student.carrots.cinema.models.Movie;
-import pl.edu.pk.student.carrots.cinema.models.Snack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,5 +24,9 @@ public class MovieRepository {
 
     public Movie get(int i) {
         return movies.get(i);
+    }
+
+    public void update(int i, Movie movie) {
+        movies.set(i, movie);
     }
 }

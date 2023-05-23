@@ -60,6 +60,10 @@ public class IO {
             }
         }
 
+        if (type.equals(Boolean.class)) {
+            return type.cast(opt.equals("Y"));
+        }
+
         return type.cast(opt);
     }
 
