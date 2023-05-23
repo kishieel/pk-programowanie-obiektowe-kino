@@ -6,8 +6,10 @@ import pl.edu.pk.student.carrots.cinema.actions.LoginAction;
 import pl.edu.pk.student.carrots.cinema.actions.WelcomeAction;
 import pl.edu.pk.student.carrots.cinema.models.Movie;
 import pl.edu.pk.student.carrots.cinema.models.Snack;
+import pl.edu.pk.student.carrots.cinema.models.User;
 import pl.edu.pk.student.carrots.cinema.repositories.MovieRepository;
 import pl.edu.pk.student.carrots.cinema.repositories.SnackRepository;
+import pl.edu.pk.student.carrots.cinema.repositories.UserRepository;
 import pl.edu.pk.student.carrots.cinema.utils.IO;
 
 import java.util.List;
@@ -24,6 +26,11 @@ public class Application {
         snackRepository.add(new Snack("Popcorn karmelowy", 15, 65));
         snackRepository.add(new Snack("Cola Zero", 4, 76));
         snackRepository.add(new Snack("Coca Cola ", 4, 12));
+
+        UserRepository userRepository = UserRepository.getInstance();
+        userRepository.add(new User("user", "password", "adam", "nowak", "adam.nowak@gmail.com", 123456789, false));
+        userRepository.add(new User("admin", "password", "jan", "kowalski", "jan.kowalski@gmail.com", 987654321,
+                                    true));
 
         new WelcomeAction().doAction();
     }
