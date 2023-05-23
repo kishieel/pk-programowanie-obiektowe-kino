@@ -50,4 +50,5 @@ public class ListMoviesAction implements SelectableAction {
         IO.println("Tum.. tum.. tum.. " + movie.duration() + " minuty później..");
         new LoggedInAction().doAction();
     }
+    }
 }
