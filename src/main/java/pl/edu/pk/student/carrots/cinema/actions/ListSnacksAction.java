@@ -4,7 +4,7 @@ import pl.edu.pk.student.carrots.cinema.models.Snack;
 import pl.edu.pk.student.carrots.cinema.repositories.SnackRepository;
 import pl.edu.pk.student.carrots.cinema.utils.IO;
 
-public class ListSnacksAction implements SelectableAction {
+public class ListSnacksAction extends SelectableAction {
     SnackRepository snackRepository = SnackRepository.getInstance();
 
     @Override

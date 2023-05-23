@@ -4,7 +4,7 @@ import pl.edu.pk.student.carrots.cinema.models.Movie;
 import pl.edu.pk.student.carrots.cinema.repositories.MovieRepository;
 import pl.edu.pk.student.carrots.cinema.utils.IO;
 
-public class EditMovieAction implements SelectableAction {
+public class EditMovieAction extends SelectableAction {
     MovieRepository movieRepository = MovieRepository.getInstance();
 
     @Override

@@ -1,6 +1,6 @@
 package pl.edu.pk.student.carrots.cinema.actions;
 
-public class LogoutAction implements SelectableAction {
+public class LogoutAction extends SelectableAction {
     @Override
     public String getTitle() {
         return "Wyloguj";

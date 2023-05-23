@@ -3,7 +3,7 @@ import pl.edu.pk.student.carrots.cinema.models.User;
 import pl.edu.pk.student.carrots.cinema.repositories.UserRepository;
 
 import java.util.Scanner;
-public class RegisterAction implements SelectableAction
+public class RegisterAction extends SelectableAction
 {
     UserRepository userRepository = UserRepository.getInstance();
 

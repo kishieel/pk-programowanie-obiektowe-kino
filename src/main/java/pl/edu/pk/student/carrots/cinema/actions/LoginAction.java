@@ -6,7 +6,7 @@ import pl.edu.pk.student.carrots.cinema.repositories.UserRepository;
 import java.util.Optional;
 import java.util.Scanner;
 
-public class LoginAction implements SelectableAction {
+public class LoginAction extends SelectableAction {
     @Override
     public String getTitle() {
         return "Zaloguj się";
