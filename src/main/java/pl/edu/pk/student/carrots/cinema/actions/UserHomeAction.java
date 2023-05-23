@@ -4,7 +4,7 @@ import pl.edu.pk.student.carrots.cinema.utils.IO;
 
 import java.util.List;
 
-public class LoggedInAction implements Action {
+public class UserHomeAction implements Action {
 
 
     @Override

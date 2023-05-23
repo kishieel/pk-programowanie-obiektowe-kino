@@ -1,8 +1,5 @@
 package pl.edu.pk.student.carrots.cinema.actions;
 
-import pl.edu.pk.student.carrots.cinema.utils.IO;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class LoginAction implements SelectableAction {
@@ -35,7 +32,7 @@ public class LoginAction implements SelectableAction {
             }
         }
 
-        new LoggedInAction().doAction();
+        new UserHomeAction().doAction();
     }
 
     private class Login {
