@@ -17,9 +17,9 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
         MovieRepository movieRepository = MovieRepository.getInstance();
-        movieRepository.add(new Movie("Piękna i bestia", "Lorem ipsum...", 123, false));
-        movieRepository.add(new Movie("O cierpieniu człowieka", "Lorem ipsum...", 154, true));
-        movieRepository.add(new Movie("Kubuś puchatek i przyjaciele", "Lorem ipsum...", 45, false));
+        movieRepository.add(new Movie("Piękna i bestia", "Lorem ipsum...", 123, false, 20));
+        movieRepository.add(new Movie("O cierpieniu człowieka", "Lorem ipsum...", 154, true, 20));
+        movieRepository.add(new Movie("Kubuś puchatek i przyjaciele", "Lorem ipsum...", 45, false, 20));
 
         SnackRepository snackRepository = SnackRepository.getInstance();
         snackRepository.add(new Snack("Popcorn zwykły", 12, 43));

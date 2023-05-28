@@ -11,7 +11,7 @@ public class UserHomeAction implements Action {
     public void doAction() {
         IO.menu(
                 "Witaj w panelu użytkownika. Jak możemy Ci pomóc?",
-                List.of(new ListMoviesAction(), new ListSnacksAction(), new LogoutAction())
+                List.of(new ListMoviesAction(), new ListSnacksAction(), new MyTicketsAction(), new LogoutAction())
         );
     }
 }

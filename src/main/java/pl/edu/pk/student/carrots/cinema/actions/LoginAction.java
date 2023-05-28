@@ -2,6 +2,7 @@ package pl.edu.pk.student.carrots.cinema.actions;
 
 import pl.edu.pk.student.carrots.cinema.models.User;
 import pl.edu.pk.student.carrots.cinema.repositories.UserRepository;
+import pl.edu.pk.student.carrots.cinema.utils.Auth;
 
 import java.util.Optional;
 import java.util.Scanner;
@@ -29,6 +30,8 @@ public class LoginAction extends SelectableAction {
             {
                 loginExists=true;
                 System.out.println("Zalogowano się pomyślnie!");
+
+                Auth.getInstance().setCurrentUser(login.getUser());
                 if (login.isAdmin()) {
                     new AdminHomeAction().doAction();
                 } else {
@@ -60,5 +63,7 @@ public class LoginAction extends SelectableAction {
         private boolean isAdmin() {
             return user.get().isAdmin();
         }
+
+        private User getUser() { return user.get(); }
     }
 }

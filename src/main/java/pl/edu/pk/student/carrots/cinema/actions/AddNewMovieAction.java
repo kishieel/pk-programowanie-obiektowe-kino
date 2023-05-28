@@ -26,7 +26,7 @@ public class AddNewMovieAction extends SelectableAction {
         IO.print("Czy jest odpowiedni dla dzieci? (Y/N)");
         boolean ageRestricted = IO.input(Boolean.class);
 
-        movieRepository.add(new Movie(title, description,  duration, ageRestricted));
+        movieRepository.add(new Movie(title, description,  duration, ageRestricted, 20));
         IO.println("Nowy film dodany pomyślnie!");
 
         new AdminHomeAction().doAction();

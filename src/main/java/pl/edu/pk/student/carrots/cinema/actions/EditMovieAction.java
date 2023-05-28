@@ -43,7 +43,7 @@ public class EditMovieAction extends SelectableAction {
         IO.print("Czy jest odpowiedni dla dzieci? (Y/N)");
         boolean ageRestricted = IO.input(Boolean.class);
 
-        movieRepository.update(movieId, new Movie(title, description,  duration, ageRestricted));
+        movieRepository.update(movieId, new Movie(title, description,  duration, ageRestricted, 20));
         IO.println("Film został zapisany pomyślnie!");
 
         new AdminHomeAction().doAction();

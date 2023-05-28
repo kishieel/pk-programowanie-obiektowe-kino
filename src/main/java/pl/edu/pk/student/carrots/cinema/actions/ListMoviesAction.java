@@ -1,7 +1,10 @@
 package pl.edu.pk.student.carrots.cinema.actions;
 
 import pl.edu.pk.student.carrots.cinema.models.Movie;
+import pl.edu.pk.student.carrots.cinema.models.Ticket;
 import pl.edu.pk.student.carrots.cinema.repositories.MovieRepository;
+import pl.edu.pk.student.carrots.cinema.repositories.TicketRepository;
+import pl.edu.pk.student.carrots.cinema.utils.Auth;
 import pl.edu.pk.student.carrots.cinema.utils.IO;
 
 public class ListMoviesAction extends SelectableAction {
@@ -46,6 +49,10 @@ public class ListMoviesAction extends SelectableAction {
         } else {
             IO.println("Wybrałeś: " + movie.title() + ". Miłego oglądania!");
         }
+
+        TicketRepository ticketRepository = TicketRepository.getInstance();
+        String login = Auth.getInstance().getCurrentUser().login();
+        ticketRepository.add(new Ticket(login, movie.title()));
 
         IO.println("Tum.. tum.. tum.. " + movie.duration() + " minuty później..");
         new UserHomeAction().doAction();
