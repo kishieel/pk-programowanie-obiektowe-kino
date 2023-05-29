@@ -13,7 +13,7 @@ public class MyTicketsAction extends SelectableAction {
 
     @Override
     public String getTitle() {
-        return "Moje bility";
+        return "Moje bilety";
     }
 
     @Override
